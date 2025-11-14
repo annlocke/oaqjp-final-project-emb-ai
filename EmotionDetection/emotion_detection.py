@@ -17,4 +17,4 @@ def emotion_detector(text_to_analyse):
     largest_key = max(label,key=label.get)
     label['dominant_emotion']=largest_key
     formatted_json = json.dumps(label, indent=4)
-    return formatted_json
+    return label
