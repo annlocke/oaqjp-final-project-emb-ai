@@ -18,7 +18,11 @@ def sent_analyzer():
      + ". The dominant emotion is " + str(response['dominant_emotion']) + "."
     )
     # Return a formatted string
-    return response_display
+    # Check if the label is None, indicating an error or invalid input
+    if response['dominant_emotion'] is None:
+        return "Invalid text! Try again."
+    else:
+        return response_display
 
 @app.route("/")
 def render_index_page():
